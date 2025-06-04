@@ -1,0 +1,129 @@
+.results-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background-color: white;
+  background-image: 
+    radial-gradient(circle at 10% 40%, rgba(0, 100, 0, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(34, 139, 34, 0.35) 0%, transparent 30%),
+    radial-gradient(circle at 40% 5%, rgba(50, 205, 50, 0.45) 0%, transparent 30%);
+}
+
+.results-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 128, 0, 0.15) 0%, transparent 70%);
+  opacity: 0.3;
+}
+
+.results-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.results-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.results-title-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #2e8b57, #3cb371);
+  margin-left: 0.5rem;
+}
+
+.results-tracks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.results-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.results-track-reverse {
+  justify-content: flex-end;
+}
+
+.result-box {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 50, 0, 0.2);
+  width: 300px;
+  height: 300px; /* Fixed height for square cards */
+  flex-shrink: 0;
+}
+
+.result-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(46, 139, 87, 0.4);
+  border-color: rgba(46, 139, 87, 0.6);
+}
+
+.result-image {
+  width: 100%;
+  height: 100%; /* Fill entire card */
+}
+
+.result-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.glow-effect {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 255, 127, 0.4) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.result-box:hover .glow-effect {
+  opacity: 0.9;
+}
+
+.result-box:hover .result-image img {
+  transform: scale(1.1);
+  filter: brightness(1.15) saturate(1.3);
+}
+
+/* Remove text-related styles */
+.result-content {
+  display: none; /* Hide text container */
+}
+
+@media (max-width: 768px) {
+  .results-title {
+    font-size: 2.5rem;
+  }
+
+  .results-track {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .results-track-reverse {
+    justify-content: flex-start;
+  }
+
+  .result-box {
+    width: 100%;
+  }
+}
