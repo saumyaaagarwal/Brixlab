@@ -1,0 +1,31 @@
+/* Process Section Styles */
+.process-card-container {
+    perspective: 1000px;
+  }
+   
+  .process-card {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+   
+  /* Animation for the active card */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+   
+  .active-card {
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  }
+   
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .process-card-container {
+      height: 600px !important;
+    }
+   
+    .process-card {
+      width: 90% !important;
+    }
+  } 

@@ -13,9 +13,9 @@ const CaseStudiesSection: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Case study placeholders */}
-          {[1, 2].map((item) => (
+          {[1, 2, 3].map((item) => (
             <div key={item} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-secondary/80">
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300"></div>
               <div className="relative p-8 min-h-[300px] flex flex-col justify-end text-white">
